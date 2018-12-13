@@ -3,6 +3,12 @@ public class Node{
   private Node next;
   private Node previous;
 
+  public Node(int i, Node n, Node p) {
+    setData(i);
+    setNext(n);
+    setPrev(p);
+  }
+
   public Node next() {
     return next;
   }
