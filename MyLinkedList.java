@@ -59,4 +59,15 @@ public class MyLinkedList{
     current.setData(value);
     return f;
   }
+
+  public boolean contains(Integer value) {
+    Node current = start;
+    while (current != end) {
+      if (current.getData() == value) {
+        return true;
+      }
+      current = current.next();
+    }
+    return end.getData() == value;
+  }
 }

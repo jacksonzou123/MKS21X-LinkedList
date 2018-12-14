@@ -1,7 +1,6 @@
 public class Driver{
   public static void main(String[] args) {
     MyLinkedList a = new MyLinkedList();
-    System.out.println(a);
     a.add(5);
     a.add(3);
     a.add(23);
@@ -13,9 +12,9 @@ public class Driver{
     a.add(1);
     a.add(44);
     System.out.println(a);
-    System.out.println(a.get(4));
-    System.out.println(a.set(4,5));
-    System.out.println(a.get(4));
-    System.out.println(a);
+    System.out.println(a.contains(5));
+    System.out.println(a.contains(23));
+    System.out.println(a.contains(44));
+    System.out.println(a.contains(-1));
   }
 }
