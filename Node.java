@@ -1,7 +1,7 @@
 public class Node{
   private int data;
   private Node next;
-  private Node previous;
+  private Node prev;
 
   public Node(int i, Node n, Node p) {
     setData(i);
@@ -22,7 +22,7 @@ public class Node{
   }
 
   public void setPrev(Node other) {
-    previous = other;
+    prev = other;
   }
 
   public Integer getData() {
@@ -30,7 +30,9 @@ public class Node{
   }
 
   public Integer setData(Integer i) {
+    int f = getData();
     data = i;
+    return f;
   }
 
 }

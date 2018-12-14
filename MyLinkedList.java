@@ -22,9 +22,20 @@ public class MyLinkedList{
       end = current;
     }
     size++;
+    return true;
   }
 
   public String toString() {
     return "";
   }
+
+
+  public Integer get(int index) {
+    Node current = start;
+    while (index != 0) {
+      current = current.next();
+    }
+    return current.getData();
+  }
+
 }
