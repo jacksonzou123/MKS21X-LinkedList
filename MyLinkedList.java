@@ -26,7 +26,17 @@ public class MyLinkedList{
   }
 
   public String toString() {
-    return "";
+    if (size == 0) {
+      return "[]";
+    }
+    Node current = start;
+    String f = "[";
+    while (current != end) {
+      f += current.getData() + ", ";
+      current = current.next();
+    }
+    f += end.getData() + "]";
+    return f;
   }
 
 
@@ -34,6 +44,7 @@ public class MyLinkedList{
     Node current = start;
     while (index != 0) {
       current = current.next();
+      index--;
     }
     return current.getData();
   }
