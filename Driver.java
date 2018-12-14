@@ -12,9 +12,9 @@ public class Driver{
     a.add(1);
     a.add(44);
     System.out.println(a);
-    System.out.println(a.indexOf(5));
-    System.out.println(a.indexOf(34));
-    System.out.println(a.indexOf(44));
-    System.out.println(a.indexOf(43));
+    a.add(4,3);
+    System.out.println(a);
+    System.out.print(a.get(0));
+    System.out.print(a.get(a.size()-1));
   }
 }

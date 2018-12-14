@@ -86,4 +86,27 @@ public class MyLinkedList{
     }
     return -1;
   }
+
+  public void add(int index, Integer value) {
+    if (index == 0) {
+      add(value);
+    }
+    else {
+      Node previous = start;
+      while (index != 1) {
+        previous = previous.next();
+        index--;
+      }
+      Node current;
+      if (previous == end) {
+        current = new Node(value, previous, null);
+        previous.next().setPrev(current);
+        end = current;
+      }
+      else {
+        current = new Node(value, previous, previous.next());
+      }
+      previous.setNext(current);
+    }
+  }
 }
