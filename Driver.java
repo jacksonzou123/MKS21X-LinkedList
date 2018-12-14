@@ -14,5 +14,8 @@ public class Driver{
     a.add(44);
     System.out.println(a);
     System.out.println(a.get(4));
+    System.out.println(a.set(4,5));
+    System.out.println(a.get(4));
+    System.out.println(a);
   }
 }

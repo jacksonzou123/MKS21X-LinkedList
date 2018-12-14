@@ -49,4 +49,14 @@ public class MyLinkedList{
     return current.getData();
   }
 
+  public Integer set(int index, Integer value) {
+    Node current = start;
+    while (index != 0) {
+      current = current.next();
+      index--;
+    }
+    Integer f = current.getData();
+    current.setData(value);
+    return f;
+  }
 }
