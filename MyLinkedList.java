@@ -70,4 +70,20 @@ public class MyLinkedList{
     }
     return end.getData() == value;
   }
+
+  public int indexOf(Integer value) {
+    Node current = start;
+    int index = 0;
+    while (current != end) {
+      if (current.getData() == value) {
+        return index;
+      }
+      index++;
+      current = current.next();
+    }
+    if (end.getData() == value) {
+      return index;
+    }
+    return -1;
+  }
 }
