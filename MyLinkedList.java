@@ -109,4 +109,39 @@ public class MyLinkedList{
       size++;
     }
   }
+
+  public Integer remove(int index) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("Remove index out of bounds");
+    }
+    int f = 0;
+    if (index == 0) {
+      try {
+        f = start.getData();
+        start = start.next();
+        start.setPrev(null);
+      }
+      catch(NullPointerException e) {
+        start = null;
+        end = null;
+      }
+    }
+    else if (index == size()-1) {
+      f = end.getData();
+      end = end.prev();
+      end.setNext(null);
+    }
+    else {
+      Node current = start;
+      while (index != 0) {
+        index--;
+        current = current.next();
+      }
+      f = current.getData();
+      current.prev().setNext(current.next());
+      current.next().setPrev(current.prev());
+    }
+    size--;
+    return f;
+  }
 }

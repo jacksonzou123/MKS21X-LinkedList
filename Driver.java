@@ -8,10 +8,10 @@ public class Driver{
     a.add(4);
     a.add(5);
     a.add(6);
+    a.add(7);
     System.out.println(a);
-    a.add(0,10);
+    a.remove(7);
     System.out.println(a);
-    System.out.println(a.size());
-    System.out.println(a.contains(5));
+
   }
 }
