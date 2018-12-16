@@ -75,7 +75,7 @@ public class MyLinkedList{
     Node current = start;
     int index = 0;
     while (current != end) {
-      if (current.getData() == value) {
+      if (current.getData().equals(value)) {
         return index;
       }
       index++;
