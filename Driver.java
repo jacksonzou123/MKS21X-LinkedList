@@ -10,7 +10,7 @@ public class Driver{
     a.add(6);
     a.add(7);
     System.out.println(a);
-    a.remove(7);
+    System.out.println(a.remove(new Integer(10)));
     System.out.println(a);
 
   }
