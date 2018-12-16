@@ -88,25 +88,25 @@ public class MyLinkedList{
   }
 
   public void add(int index, Integer value) {
-    if (index == 0) {
+    if (size() == index) {
       add(value);
     }
     else {
-      Node previous = start;
-      while (index != 1) {
-        previous = previous.next();
+      Node next = start;
+      while (index != 0) {
+        next = next.next();
         index--;
       }
-      Node current;
-      if (previous == end) {
-        current = new Node(value, previous, null);
-        previous.next().setPrev(current);
-        end = current;
+      Node previous = next.prev();
+      Node current = new Node(value, next, previous);
+      try {
+        previous.setNext(current);
       }
-      else {
-        current = new Node(value, previous, previous.next());
+      catch(NullPointerException e) {
+        start = current;
       }
-      previous.setNext(current);
+      next.setPrev(current);
+      size++;
     }
   }
 }
