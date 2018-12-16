@@ -41,6 +41,9 @@ public class MyLinkedList{
 
 
   public Integer get(int index) {
+    if (index < 0 || index > size()) {
+      throw new IndexOutOfBoundsException("get index out of bounds");
+    }
     Node current = start;
     while (index != 0) {
       current = current.next();
@@ -50,6 +53,9 @@ public class MyLinkedList{
   }
 
   public Integer set(int index, Integer value) {
+    if (index < 0 || index > size()) {
+      throw new IndexOutOfBoundsException("set index out of bounds");
+    }
     Node current = start;
     while (index != 0) {
       current = current.next();
@@ -88,6 +94,9 @@ public class MyLinkedList{
   }
 
   public void add(int index, Integer value) {
+    if (index < 0 || index > size()) {
+      throw new IndexOutOfBoundsException("add index out of bounds");
+    }
     if (size() == index) {
       add(value);
     }
