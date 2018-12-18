@@ -10,7 +10,14 @@ public class Driver{
     a.add(6);
     a.add(7);
     System.out.println(a);
-    System.out.println(a.indexOf(new Integer(10)));
-
+    MyLinkedList b = new MyLinkedList();
+    b.add(8);
+    b.add(9);
+    System.out.println(b);
+    a.extend(b);
+    System.out.println("-------------");
+    System.out.println(a);
+    System.out.println(b);
+    System.out.println(a.size());
   }
 }
