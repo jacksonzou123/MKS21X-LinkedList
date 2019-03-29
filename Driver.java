@@ -9,6 +9,7 @@ public class Driver{
     a.add(5);
     a.add(6);
     a.add(7);
+    a.remove(3);
     System.out.println(a);
     MyLinkedList b = new MyLinkedList();
     b.add(8);

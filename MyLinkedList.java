@@ -1,4 +1,4 @@
-public class MyLinkedList{
+public class MyLinkedList<E>{
   private int size;
   private Node start;
   private Node end;
@@ -11,13 +11,13 @@ public class MyLinkedList{
     return size;
   }
 
-  public boolean add(Integer value) {
+  public boolean add(E element) {
     if (size()==0){
-      start = new Node(value, null, null);
+      start = new Node(element, null, null);
       end = start;
     }
     else {
-      Node current = new Node(value,null,end);
+      Node current = new Node(element,null,end);
       end.setNext(current);
       end = current;
     }
@@ -40,7 +40,7 @@ public class MyLinkedList{
   }
 
 
-  public Integer get(int index) {
+  public E get(int index) {
     if (index < 0 || index > size()) {
       throw new IndexOutOfBoundsException("get index out of bounds");
     }
@@ -52,7 +52,7 @@ public class MyLinkedList{
     return current.getData();
   }
 
-  public Integer set(int index, Integer value) {
+  public E set(int index, E element) {
     if (index < 0 || index > size()) {
       throw new IndexOutOfBoundsException("set index out of bounds");
     }
@@ -61,12 +61,12 @@ public class MyLinkedList{
       current = current.next();
       index--;
     }
-    Integer f = current.getData();
+    E f = current.getData();
     current.setData(value);
     return f;
   }
 
-  public boolean contains(Integer value) {
+  public boolean contains(E value) {
     Node current = start;
     while (current != end) {
       if (current.getData() == value) {
@@ -77,7 +77,7 @@ public class MyLinkedList{
     return end.getData() == value;
   }
 
-  public int indexOf(Integer value) {
+  public int indexOf(E value) {
     Node current = start;
     int index = 0;
     while (current != end) {
@@ -93,7 +93,7 @@ public class MyLinkedList{
     return -1;
   }
 
-  public void add(int index, Integer value) {
+  public void add(int index, E value) {
     if (index < 0 || index > size()) {
       throw new IndexOutOfBoundsException("add index out of bounds");
     }
@@ -119,7 +119,7 @@ public class MyLinkedList{
     }
   }
 
-  public Integer remove(int index) {
+  public E remove(int index) {
     if (index < 0 || index >= size()) {
       throw new IndexOutOfBoundsException("Remove index out of bounds");
     }
@@ -154,7 +154,7 @@ public class MyLinkedList{
     return f;
   }
 
-  public boolean remove(Integer value) {
+  public boolean remove(E value) {
     Node current = start;
     boolean check = false;
     int index = 0;
@@ -185,5 +185,43 @@ public class MyLinkedList{
     other.start = null;
     other.end = null;
     other.size = 0;
+  }
+
+  public class Node{
+    private E data;
+    private Node next;
+    private Node prev;
+
+    public Node(E i, Node n, Node p) {
+      setData(i);
+      setNext(n);
+      setPrev(p);
+    }
+
+    public Node next() {
+      return next;
+    }
+
+    public Node prev() {
+      return prev;
+    }
+
+    public void setNext(Node other) {
+      next = other;
+    }
+
+    public void setPrev(Node other) {
+      prev = other;
+    }
+
+    public E getData() {
+      return data;
+    }
+
+    public E setData(E i) {
+      E f = getData();
+      data = i;
+      return f;
+    }
   }
 }
